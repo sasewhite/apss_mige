@@ -1,0 +1,4 @@
+name,appid,secret,grant_type,assert_str
+"获取access_token鉴权码","wxcffb4fed03363e2d","dc77b17bd2010a2d36b802ee6a6cf143","client_credential","access_token"
+"获取access_token鉴权码-appid为空","","dc77b17bd2010a2d36b802ee6a6cf143","client_credential","errcode"
+"错误的appid","aaa","dc77b17bd2010a2d36b802ee6a6cf144","client_credential","errcode"

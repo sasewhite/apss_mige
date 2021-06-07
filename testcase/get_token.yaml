@@ -1,0 +1,17 @@
+- name: $csv{name}
+  parameters:
+    name-appid-secret-grant_type-assert_str: data/get_token_data.csv
+  request:
+    method: GET
+    url: /cgi-bin/token
+    data:
+      appid: $csv{appid}
+      grant_type: $csv{grant_type}
+      secret: $csv{secret}
+  extract:
+    access_token: '"access_token":"(.*?)",'
+  validate:
+        - equals: { status_code: 200 }
+        - contains: $csv{assert_str}
+
+

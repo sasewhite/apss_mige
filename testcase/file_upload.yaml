@@ -1,0 +1,11 @@
+- name: 文件上传
+  request:
+    method: post
+    url: /cgi-bin/media/uploadimg?access_token={{access_token}}
+    data: {}
+    files:
+         media: "D:/wallhaven-zxz8wog.jpg"
+  validate:
+        - equals: { status_code: 200 }
+        - contains: http
+        - contains: url

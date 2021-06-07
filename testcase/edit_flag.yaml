@@ -1,0 +1,19 @@
+- name: 编辑标签11111111111111111111
+  request:
+    method: post
+    url: /cgi-bin/tags/update?access_token={{access_token}}
+    data: {"tag":{"id":127,"name":"SS${get_random_number()}"}}
+  validate:
+        - equals: { status_code: 200 }
+        - equals: { errcode: 0 }
+        - equals: { errmsg: ok }
+
+- name: 编辑标签222222222222222222222
+  request:
+    method: post
+    url: /cgi-bin/tags/update?access_token={{access_token}}
+    data: {"tag":{"id":127,"name":"SS${get_random_number()}"}}
+  validate:
+        - equals: { status_code: 200 }
+        - equals: { errcode: 0 }
+        - equals: { errmsg: ok }

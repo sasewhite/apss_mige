@@ -1,0 +1,7 @@
+base:
+  base_url: https://api.weixin.qq.com
+
+log:
+  log_name: logs_
+  log_level: info
+  log_format: "[%(asctime)s][%(filename)s][%(funcName)s][%(lineno)d][%(levelname)s]:%(message)s"

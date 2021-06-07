@@ -1,0 +1,11 @@
+- name: 查询标签
+  request:
+    method: GET
+    url: /cgi-bin/tags/get?access_token={{access_token}}
+    data: {}
+  validate:
+        - equals: { status_code: 200 }
+        - contains: tags
+        - contains: name
+        - contains: id
+        - contains: count
