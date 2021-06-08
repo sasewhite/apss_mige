@@ -1,0 +1,36 @@
+[2021-06-08 10:04:30,037][logger_utils.py][write_log][57][INFO]:----------------------接口请求开始-----------------------
+[2021-06-08 10:04:30,037][logger_utils.py][write_log][57][INFO]:接口名称：获取access_token鉴权码
+[2021-06-08 10:04:30,038][logger_utils.py][write_log][57][INFO]:接口请求方式：GET
+[2021-06-08 10:04:30,038][logger_utils.py][write_log][57][INFO]:接口路径：/cgi-bin/token
+[2021-06-08 10:04:30,038][logger_utils.py][write_log][57][INFO]:接口数据：{'appid': 'wxcffb4fed03363e2d', 'grant_type': 'client_credential', 'secret': 'dc77b17bd2010a2d36b802ee6a6cf143'}
+[2021-06-08 10:04:30,521][logger_utils.py][write_log][57][INFO]:预期结果：[{'equals': {'status_code': 200}}, {'contains': 'access_token'}]
+[2021-06-08 10:04:30,524][logger_utils.py][write_log][57][INFO]:实际结果：{'access_token': '45__8izV-SbxvLnU6aX1-i69OyoW_YrRZygxWkd_6PtjupuXN3gwDyyYMDpHgRstT_5QJGu5NikrQRUuKy-7ws9vrBs_u47doZaRegBBLlUYKb0BCH2piAI8MNrOeUf6_0nwsBl4MXnSSeIqw6dLHWeAEATPE', 'expires_in': 7200}
+[2021-06-08 10:04:30,524][logger_utils.py][write_log][57][INFO]:状态码断言成功.......
+[2021-06-08 10:04:30,524][logger_utils.py][write_log][57][INFO]:业务断言成功，包含断言字符串access_token
+[2021-06-08 10:04:30,524][logger_utils.py][write_log][57][INFO]:------------------------------------断言结束----------------------------------------------------
+[2021-06-08 10:04:30,524][logger_utils.py][write_log][57][INFO]:-----------------------接口请求结束----------------------------------------------------------
+
+[2021-06-08 10:04:30,530][logger_utils.py][write_log][57][INFO]:----------------------接口请求开始-----------------------
+[2021-06-08 10:04:30,530][logger_utils.py][write_log][57][INFO]:接口名称：获取access_token鉴权码-appid为空
+[2021-06-08 10:04:30,530][logger_utils.py][write_log][57][INFO]:接口请求方式：GET
+[2021-06-08 10:04:30,530][logger_utils.py][write_log][57][INFO]:接口路径：/cgi-bin/token
+[2021-06-08 10:04:30,530][logger_utils.py][write_log][57][INFO]:接口数据：{'appid': '', 'grant_type': 'client_credential', 'secret': 'dc77b17bd2010a2d36b802ee6a6cf143'}
+[2021-06-08 10:04:31,215][logger_utils.py][write_log][57][INFO]:预期结果：[{'equals': {'status_code': 200}}, {'contains': 'errcode'}]
+[2021-06-08 10:04:31,215][logger_utils.py][write_log][57][INFO]:实际结果：{'errcode': 41002, 'errmsg': 'appid missing rid: 60bed02d-319d2b73-1dabbfe3'}
+[2021-06-08 10:04:31,216][logger_utils.py][write_log][57][INFO]:状态码断言成功.......
+[2021-06-08 10:04:31,216][logger_utils.py][write_log][57][INFO]:业务断言成功，包含断言字符串errcode
+[2021-06-08 10:04:31,216][logger_utils.py][write_log][57][INFO]:------------------------------------断言结束----------------------------------------------------
+[2021-06-08 10:04:31,216][logger_utils.py][write_log][57][INFO]:-----------------------接口请求结束----------------------------------------------------------
+
+[2021-06-08 10:04:31,219][logger_utils.py][write_log][57][INFO]:----------------------接口请求开始-----------------------
+[2021-06-08 10:04:31,220][logger_utils.py][write_log][57][INFO]:接口名称：错误的appid
+[2021-06-08 10:04:31,220][logger_utils.py][write_log][57][INFO]:接口请求方式：GET
+[2021-06-08 10:04:31,220][logger_utils.py][write_log][57][INFO]:接口路径：/cgi-bin/token
+[2021-06-08 10:04:31,220][logger_utils.py][write_log][57][INFO]:接口数据：{'appid': 'aaa', 'grant_type': 'client_credential', 'secret': 'dc77b17bd2010a2d36b802ee6a6cf144'}
+[2021-06-08 10:04:31,693][logger_utils.py][write_log][57][INFO]:预期结果：[{'equals': {'status_code': 200}}, {'contains': 'errcode'}]
+[2021-06-08 10:04:31,693][logger_utils.py][write_log][57][INFO]:实际结果：{'errcode': 40013, 'errmsg': 'invalid appid rid: 60bed02e-4cdafdc1-050d2de3'}
+[2021-06-08 10:04:31,693][logger_utils.py][write_log][57][INFO]:状态码断言成功.......
+[2021-06-08 10:04:31,693][logger_utils.py][write_log][57][INFO]:业务断言成功，包含断言字符串errcode
+[2021-06-08 10:04:31,693][logger_utils.py][write_log][57][INFO]:------------------------------------断言结束----------------------------------------------------
+[2021-06-08 10:04:31,694][logger_utils.py][write_log][57][INFO]:-----------------------接口请求结束----------------------------------------------------------
+
