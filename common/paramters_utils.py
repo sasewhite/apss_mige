@@ -47,10 +47,11 @@ def read_testcase_yaml(testcase_yaml_name):
 
 def analysis_paramters(caseinfo):
     '''
+    -数据驱动-
     如果从测试用例yaml文件中读取到的caseinfo中存在一级标签parameters，
     那就用csv文件中的数据替换caseinfo中的变量。
-    :param caseinfo:
-    :return: new_caseinfo --替换后的caseinfo
+    :param caseinfo: dict类型
+    :return: new_caseinfo --替换后的caseinfo  字典的列表 [{},{},{}]
     '''
     try:
         if jsonpath.jsonpath(caseinfo, '$.parameters'):

@@ -21,6 +21,10 @@ import yaml
 
 # 获取到项目路径
 def get_object_path():
+    '''
+
+    :return: 返回项目路径，项目的根路径
+    '''
     return os.path.realpath(__file__).split('common')[0]
 
 
@@ -52,14 +56,19 @@ def clear_extract_yaml():
 
 # 读取数据csv文件的方法
 def read_csv_data(path):
+    '''
+
+    :param path: csv数据文件的路径，相对路径
+    :return: data_list list的list 列表的列表，每一行作为一个列表
+    '''
     data_list = []
     with open(get_object_path() + path, 'r', encoding='utf-8') as f:
         data = csv.reader(f)
         for i in data:
+            print(i)
             data_list.append(i)
     return data_list
 
 
 if __name__ == '__main__':
     print(read_csv_data(r"data/get_token_data.csv"))
-    raw =  read_testcase_yaml(r"testcase/get_token.yaml")
