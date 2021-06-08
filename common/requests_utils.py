@@ -18,7 +18,11 @@ from common.logger_utils import write_log, error_log
 
 class Requests_Utils:
     '''
-
+    定义一个发送请求的类
+    方法有：
+    analysis_yaml： 对读取yaml用例文件得到的数据进行分析，得到 method、header、data、files等数据
+    send_Requests： 根据得到的数据发送请求
+    validate_result： 根据返回的数据断言结果
     '''
     # 初始化的构造方法
     def __init__(self):
@@ -33,7 +37,7 @@ class Requests_Utils:
 
     def analysis_yaml(self, caseinfo):
         '''
-        封装的分析yaml测试用例文件的方法
+        对读取yaml用例文件得到的数据进行分析
         :param caseinfo: 读取yaml文件得到的caseinfo(已经进行数据驱动) 是个字典（dict）
         :return:
         '''
@@ -55,7 +59,7 @@ class Requests_Utils:
                         # files = caseinfo['request']['files']
                         # files = open(caseinfo['request']['files'], 'rb')
                     # 收集日志
-                    write_log("----------------------接口请求开始-----------------------")
+                    write_log('-' * 30 + "接口请求开始" + '-' * 30)
                     write_log("接口名称：%s" % caseinfo['name'])
                     write_log("接口请求方式：%s" % caseinfo['request']['method'])
                     write_log("接口路径：%s" % caseinfo['request']['url'])
@@ -109,7 +113,7 @@ class Requests_Utils:
         write_log("预期结果：%s" % expected_result)
         write_log("实际结果：%s" % actual_result)
         try:
-            print("------------------------------------断言开始----------------------------------------------------")
+            write_log('-' * 20 + "断言开始" + '-' * 20)
             flag = 0
             if expected_result and isinstance(expected_result, list):
                 for expect in expected_result:
@@ -151,12 +155,11 @@ class Requests_Utils:
                             error_log("不支持的断言方式")
                             # print("不支持的断言方式")
             assert flag == 0
-            # print("------------------------------------断言结束----------------------------------------------------")
-            write_log("------------------------------------断言结束----------------------------------------------------")
-            write_log("-----------------------接口请求结束----------------------------------------------------------\n")
+            write_log('-' * 20 + "断言结束" + '-' * 20)
+            write_log('-' * 30 + "接口请求结束" + '-' * 30 + "\n")
         except Exception as e:
             error_log("断言出错，异常信息：%s" % str(traceback.format_exc()))
-            write_log("-----------------------接口请求结束----------------------------------------------------------\n")
+            write_log('-' * 30 + "接口请求结束" + '-' * 30 + "\n")
             raise e
 
     def send_Requests(self, method, url, headers=None, data=None, files=None):

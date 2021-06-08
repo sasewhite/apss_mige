@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   paramters_utils.py    
+@File    :   paramters_utils.py
 @Contact :   sasewhite@live.com
 @License :   (C)Copyright 2017-2021, 114S-342t-3Y
 
@@ -10,16 +10,14 @@
 2021/6/2 8:58   Mige      1.0         None
 '''
 import traceback
-
-'''
-数据驱动的处理方法！！！！
-'''
-
 import json
 import jsonpath
 import yaml
 from common.common_utils import get_object_path, read_csv_data
 from common.logger_utils import write_log, error_log
+'''
+数据驱动的处理方法！！！！
+'''
 
 
 # 读取测试用例testcase文件yaml----测试用例.yaml

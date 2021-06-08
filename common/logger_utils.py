@@ -23,7 +23,7 @@ class Logger_Utils:
         if not self.logger.handlers:
             # 设置全局日志级别
             self.logger.setLevel(logging.DEBUG)
-            # 设置日志文件的路径
+            # 设置日志文件的路径,logs文件夹必须存在，否则会报错
             self.file_path = get_object_path() + "logs/" + read_config_yaml('log',
                                                                             'log_name') + datetime.datetime.now().strftime(
                 '%Y-%m-%d-%H-%M') + '.log'

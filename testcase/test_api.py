@@ -12,7 +12,6 @@
 import json
 import jsonpath
 import pytest
-
 from common.paramters_utils import read_testcase_yaml
 from common.requests_utils import Requests_Utils
 

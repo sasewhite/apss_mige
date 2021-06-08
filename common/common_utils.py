@@ -10,13 +10,12 @@
 2021/5/27 15:58   Mige      1.0         None
 '''
 import csv
-
+import os
+import yaml
 '''
 不能写硬编码！！！！！！！！
 '''
-import os
 
-import yaml
 
 
 # 获取到项目路径
