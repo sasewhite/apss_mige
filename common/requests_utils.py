@@ -32,13 +32,13 @@ class Requests_Utils:
         self.last_headers = {}
         # 初始化data
         self.last_data = {}
-        # 初始化方法
+        # 初始化请求方式
         self.last_method = ""
 
     def analysis_yaml(self, caseinfo):
         '''
         对读取yaml用例文件得到的数据进行分析
-        :param caseinfo: 读取yaml文件得到的caseinfo(已经进行数据驱动) 是个字典（dict）
+        :param caseinfo: 读取yaml用例文件得到的caseinfo(已经进行数据驱动) 类型为（dict）
         :return:
         '''
         try:
@@ -80,6 +80,7 @@ class Requests_Utils:
                     self.validate_result(expected_result, actual_result, status_code)
 
                     # 封装提取变量（json提取器，正则表达式提取器）
+                    # 正则表达式提取器提取变量
                     if jsonpath.jsonpath(caseinfo, '$..extract'):
                         for key, value in dict(caseinfo['extract']).items():
                             if '(.+?)' in value or '(.*?)' in value:
@@ -88,6 +89,7 @@ class Requests_Utils:
                                     data_dict = {key: obj.group(1)}
                                     write_extract_yaml(data_dict)
                             else:
+                                # json提取器提取变量
                                 temp_data = jsonpath.jsonpath(res.json(), '$..%s' % value)
                                 if temp_data:
                                     data_dict = {key: temp_data[0]}
@@ -100,7 +102,7 @@ class Requests_Utils:
                 error_log("一级关键字name，request，validate必填")
                 # print("一级关键字name，request，validate必填")
         except Exception as e:
-            error_log("分析yaml文件出错，异常信息：%s" % str(traceback.format_exc()))
+            error_log("读取yaml用例文件得到的数据进行分析出错，异常信息：%s" % str(traceback.format_exc()))
             raise e
 
     def validate_result(self, expected_result, actual_result, status_code):
@@ -259,16 +261,4 @@ class Requests_Utils:
 
 
 if __name__ == '__main__':
-    # url = "/cgi-bin/tags/get?access_token={{access_token}}"
-    data = {"tag": {"id": 127, "name": "SS${get_random_number()}"}}
-    text_data = json.dumps(data)
-    if '${' in text_data and '}' in text_data:
-        start_index = text_data.index('${')
-        end_index = text_data.index('}', start_index)
-        old_value = text_data[start_index: end_index + 1]
-        print(old_value)
-        function_name = old_value[2: int(old_value.index('('))]
-        print(function_name)
-        new_random_number = getattr(Debug_Talk(), function_name)()
-        text_data = text_data.replace(old_value, str(new_random_number))
-        print(text_data)
+    pass

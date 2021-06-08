@@ -34,15 +34,15 @@ class Test_Api:
         # print(caseinfo['request']['data'])
         # print(type(caseinfo))
         # print(caseinfo.keys())
-    # @ pytest.mark.parametrize('caseinfo', read_testcase_yaml('testcase/edit_flag.yaml'))
-    # def test_edit_flag(self, caseinfo):
-    #     Requests_Utils().analysis_yaml(caseinfo)
-    #
-    # @ pytest.mark.parametrize('caseinfo', read_testcase_yaml('testcase/select_flag.yaml'))
-    # def test_select_flag(self, caseinfo):
-    #     Requests_Utils().analysis_yaml(caseinfo)
-    #
-    # @ pytest.mark.parametrize('caseinfo', read_testcase_yaml('testcase/file_upload.yaml'))
-    # def test_file_upload(self, caseinfo):
-    #     Requests_Utils().analysis_yaml(caseinfo)
+    @ pytest.mark.parametrize('caseinfo', read_testcase_yaml('testcase/edit_flag.yaml'))
+    def test_edit_flag(self, caseinfo):
+        Requests_Utils().analysis_yaml(caseinfo)
+
+    @ pytest.mark.parametrize('caseinfo', read_testcase_yaml('testcase/select_flag.yaml'))
+    def test_select_flag(self, caseinfo):
+        Requests_Utils().analysis_yaml(caseinfo)
+
+    @ pytest.mark.parametrize('caseinfo', read_testcase_yaml('testcase/file_upload.yaml'))
+    def test_file_upload(self, caseinfo):
+        Requests_Utils().analysis_yaml(caseinfo)
 
