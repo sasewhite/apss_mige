@@ -4,7 +4,7 @@
     url: /cgi-bin/media/uploadimg?access_token={{access_token}}
     data: {}
     files:
-         media: "D:/wallhaven-vgj7pl.png"
+         media: "D:/wallhaven-1k3er1.jpg"
   validate:
         - equals: { status_code: 200 }
         - contains: http

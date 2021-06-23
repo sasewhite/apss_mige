@@ -23,7 +23,7 @@ from common.logger_utils import write_log, error_log
 # 读取测试用例testcase文件yaml----测试用例.yaml
 def read_testcase_yaml(testcase_yaml_name):
     '''
-    读取测试用例yaml文件，得到一个测试用例的字典列表----[{}, []]
+    读取测试用例yaml文件，得到一个测试用例的字典列表----[{}, {}]
     如果列表的字典中有parameters关键字，则进行csv数据替换，（数据驱动），得到一个测试用例的字典列表-----[{}, {}, {}]
     :param testcase_yaml_name:
     :return: new_caseinfo ---字典列表  [{}, {}, {}]
